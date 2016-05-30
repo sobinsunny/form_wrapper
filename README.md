@@ -1,66 +1,82 @@
 # FormWrapper Module
-This form wrapper is using to render Dynamically create form elements from a json file.
+This form wrapper is using to render dynamic form elements from a json file.
 
-We can specify the elemets attributes inside a json file.
-
+In the json file we can specify the elememts and its properties.
 
 ```json
 {
-    "form_name" : "test_form",
-    "elements": {
-      "1" : {
-        "type" : "password",
-        "field" : "comment",
-        "name" : "password",
-        "class": "class_name",
-        "validations" : ""
-        },
-     "2" : {
-        "type" : "number",
-        "field" : "comment",
-        "name" : "password",
-        "class": "class_name",
-        "validations" : ""
-        },
-      }
-     "3" : {
-        "type" : "select_box",
-        "field" : "comment",
-        "name" : "password",
-        "class": "class_name",
-        "validations" : "",
-        "options": [value,name]
-        },
-      }
+  "form_name" : "test_form",
+  "elements": {
+    "1" : {
+      "type" : "password",
+      "field" : "comment",
+      "name" : "password",
+      "class": "class_name",
+      "validations" : ""
+      },
+   "2" : {
+      "type" : "number",
+      "field" : "comment",
+      "name" : "password",
+      "class": "class_name",
+      "validations" : ""
+      },
+   "3" : {
+      "type" : "select_box",
+      "field" : "comment",
+      "name" : "password",
+      "class": "class_name",
+      "validations" : "",
+      "options": [value,name]
+      },
     }
-    ```
-    
-##System dependencies
+  }
+  ```
+  
+## System dependencies
+```ruby
+ruby version >= 1.9
+```
+Recommending _bootstrap_ gem to design form or indivitual form elemets
 
- ```
- ruby version 1.9
- ```
+##Instalation
+ First add
+```ruby
+  form_builder_helper.rb
+```
+to the lib directory
  
- Recommending bootsrap gem to design form
+ Add this line to your ApplicationHelper Module
  
- ##Instalation
-   First add  
-   
-   ```ruby
-        form_builder_helper.rb
-   ```
-   to lib file
-   
-   Add module to ApplicationHelper Module
-   
-   ```ruby
-   include FormBuilderHelper
-   ```
-   
-   
-   
+ ```ruby
+ include FormBuilderHelper
+ ```
 
-     
-    
-    
-    
+## Usage
+We can use this method to render the form  elements into view
+ ```ruby
+ create_form_elements(json)
+ ```
+ We can use this function inside a form block like this
+ 
+```ruby
+<%= form_for(@post) do |f| %>
+ <%=create_form_elements(json)%>
+<% end %>
+```
+Here **json** is an instance variable that contains details about form elements.
+
+## Input Format
+In the input json should have form_name that same as the  object name like 'post','comment'. 
+Each elemets that is for specifying each form tags, and its properties.
+```json
+     "1" : {
+      "type" : "",
+      "field" : "",
+      "name" : "",
+      "class": "",
+      "validations" : ""
+      },
+  ```
+**type** is for specifying the of the input tag like
+**text_box**,**checkbox**
