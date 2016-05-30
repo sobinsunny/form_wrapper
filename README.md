@@ -29,7 +29,7 @@ We can specify the elemets attributes inside a json file.
         "name" : "password",
         "class": "class_name",
         "validations" : "",
-        "options": [['name1','value1'],['name2','value2']]
+        "options": [value,name]
         },
       }
     }
@@ -37,14 +37,26 @@ We can specify the elemets attributes inside a json file.
     
 ##System dependencies
 
- ```ruby version 1.9```
+ ```
+ ruby version 1.9
+ ```
  
  Recommending bootsrap gem to design form
  
  ##Instalation
-   First add  ```form_builder_helper.rb``` to lib file
+   First add  
+   
+   ```ruby
+        form_builder_helper.rb
+   ```
+   to lib file
+   
    Add module to ApplicationHelper Module
-   ```include FormBuilderHelper```
+   
+   ```ruby
+   include FormBuilderHelper
+   ```
+   
    
    
 
