@@ -94,7 +94,7 @@ Each element of the json object is for specifying the attributes of each form ta
 
      ```ruby
 
-      validated_form_tag :name=>"name",:form_name=>"form_name",:class=>"css   class name",:required=>"true",:feild=>"column name"
+      validated_form_tag :name=>"name",:type=>"text",:form_name=>"form_name",:class=>"css   class name",:required=>"true",:feild=>"column name"
 
      ```
    * select
