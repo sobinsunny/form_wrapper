@@ -92,19 +92,19 @@ Each element of the json object is for specifying the attributes of each form ta
    Here we can render single form tag also
    * for check text box
 
-     ```ruby
+  ```ruby
 
   <%=validated_form_tag :name=>"name",:type=>"text",:form_name=>"form_name",:class=>"css   class name",:required=>"true",:feild=>"column name"%>
 
-     ```
+  ```
    * select
-   ```ruby
+  ```ruby
 
   <%=build_validated_select :form_name=>"",:feild=>"column name",options=>['value','name'],:multipile=>true%>
 
-   ```
+  ```
    * text_area
-   ```ruby
+  ```ruby
 
   <%=text_area :name=>"name",:form_name=>"form_name",:class=>"css   class name",:required=>"true",:feild=>"column name"%>
 
